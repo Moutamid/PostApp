@@ -18,6 +18,8 @@
         android:layout_margin="12sp"
         android:elevation="0sp"
         app:tabTextColor="@color/black"
+        android:background="@drawable/et"
+        android:backgroundTint="@color/white3"
         app:tabIndicatorColor="@color/top"
         app:tabIndicator="@drawable/tab_back"
         app:tabMode="scrollable" />
