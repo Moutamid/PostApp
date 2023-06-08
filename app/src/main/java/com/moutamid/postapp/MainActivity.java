@@ -2,6 +2,7 @@ package com.moutamid.postapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new HomeFragment()).commit();
         bottomNav.setSelectedItemId(R.id.home);
-
+        bottomNav.setItemActiveIndicatorColor(ColorStateList.valueOf(getResources().getColor(R.color.top)));
         bottomNav.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.home) {
