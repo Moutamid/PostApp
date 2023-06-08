@@ -2,22 +2,27 @@ package com.moutamid.postapp.fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.tabs.TabLayout;
 import com.moutamid.postapp.ItemAdapter;
 import com.moutamid.postapp.ItemModel;
 import com.moutamid.postapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
-    RecyclerView recyclerView;
-    ArrayList<ItemModel> itemModels;
+    TabLayout tabLayout;
+    ViewPager viewPager;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -26,50 +31,55 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        itemModels = new ArrayList<>();
-        recyclerView = view.findViewById(R.id.recyler);
-        recyclerView.setHasFixedSize(false);
 
-        getData();
+        tabLayout = view.findViewById(R.id.tabLayout);
+        viewPager = view.findViewById(R.id.viewPager);
+
+        setupViewPager();
 
         return view;
     }
 
-    private void getData() {
-        ArrayList<String> images1 = new ArrayList<>();
-        images1.add("https://picsum.photos/500/300?random=1");
-        images1.add("https://picsum.photos/500/300?random=1");
-        images1.add("https://picsum.photos/500/300?random=1");
-        images1.add("https://picsum.photos/500/300?random=1");
-        ItemModel model1 = new ItemModel(
-                R.drawable.profile_icon, "Suleman Ijaz", "2 hours ago", "Sialkot", images1,
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto debitis eaque quam qui! Nemo, quis."
-        );
+    private void setupViewPager() {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(
+                getChildFragmentManager());
 
-        ArrayList<String> images2 = new ArrayList<>();
-        images2.add("https://picsum.photos/500/300?random=1");
-        images2.add("https://picsum.photos/500/300?random=1");
-        ItemModel model2 = new ItemModel(
-                R.drawable.profile_icon, "Moutamid", "7 hours ago", "Dubai", images2,
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto debitis eaque quam qui! Nemo, quis."
-        );
+        adapter.addFragment(new ListFragment(), "Theme");
+        adapter.addFragment(new ListFragment(), "Theme");
+        adapter.addFragment(new ListFragment(), "Theme");
+        adapter.addFragment(new ListFragment(), "Theme");
 
-        ArrayList<String> images3 = new ArrayList<>();
-        images3.add("https://picsum.photos/500/300?random=1");
-        images3.add("https://picsum.photos/500/300?random=1");
-        images3.add("https://picsum.photos/500/300?random=1");
-
-        ItemModel mode3 = new ItemModel(
-                R.drawable.profile_icon, "Emma Brony", "37 mints ago", "Paris", images3,
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto debitis eaque quam qui! Nemo, quis."
-        );
-
-        itemModels.add(model1);
-        itemModels.add(model2);
-        itemModels.add(mode3);
-
-        ItemAdapter adapter = new ItemAdapter(requireContext(), itemModels);
-        recyclerView.setAdapter(adapter);
-
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
+
+    static class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int arg0) {
+            return this.mFragmentList.get(arg0);
+        }
+
+        @Override
+        public int getCount() {
+            return this.mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            this.mFragmentList.add(fragment);
+            this.mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return this.mFragmentTitleList.get(position);
+        }
+    }
+
 }

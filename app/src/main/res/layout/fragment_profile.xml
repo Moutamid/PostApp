@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:padding="12sp"
                 android:orientation="vertical"
-                android:background="@color/purple">
+                android:background="@drawable/profile_back">
 
                 <RelativeLayout
                     android:layout_width="match_parent"

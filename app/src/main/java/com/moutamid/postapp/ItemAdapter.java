@@ -39,7 +39,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemVH> {
     public void onBindViewHolder(@NonNull ItemVH holder, int position) {
         ItemModel model = list.get(holder.getAdapterPosition());
         holder.name.setText(model.getName());
-        holder.location.setText(model.getLocation());
         holder.time.setText(model.getTime());
         holder.text.setText(model.getText());
         ArrayList<String> images = model.getImages();
@@ -95,7 +94,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemVH> {
 
 
     public class ItemVH extends RecyclerView.ViewHolder{
-        TextView name, time, location, text;
+        TextView name, time, text;
         CircleImageView profile;
         SliderView sliderView;
 
@@ -103,7 +102,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemVH> {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             time = itemView.findViewById(R.id.time);
-            location = itemView.findViewById(R.id.location);
             text = itemView.findViewById(R.id.text);
             profile = itemView.findViewById(R.id.circleImageView);
             sliderView = itemView.findViewById(R.id.imageSlider);
