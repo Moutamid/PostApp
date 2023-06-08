@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.ThemeFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:padding="12sp"
+        android:textColor="@color/font"
+        android:fontFamily="@font/poppins"
+        android:text="Theme" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                app:cardCornerRadius="12sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="12sp"
+                android:layout_marginStart="12sp"
+                app:strokeWidth="0sp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/nature_min" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:background="#66000000"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15sp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Nature"
+                        android:padding="12sp"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                app:cardCornerRadius="12sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="12sp"
+                android:layout_marginStart="12sp"
+                app:strokeWidth="0sp"
+                app:cardBackgroundColor="@color/red">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/music_min" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:background="#66000000"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15sp"
+                        android:layout_marginTop="15sp"
+                        android:layout_marginEnd="15sp"
+                        android:layout_marginBottom="15sp"
+                        android:padding="12sp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Entertainment"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                app:cardCornerRadius="12sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="12sp"
+                android:layout_marginStart="12sp"
+                app:strokeWidth="0sp"
+                app:cardBackgroundColor="@color/dark">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/news_min" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:background="#66000000"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12sp"
+                        android:fontFamily="@font/poppins"
+                        android:text="News"
+                        android:padding="12sp"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                app:cardCornerRadius="12sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="12sp"
+                android:layout_marginStart="12sp"
+                app:strokeWidth="0sp"
+                app:cardBackgroundColor="@color/dark">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/sports_min" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="150sp"
+                        android:background="#66000000"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15sp"
+                        android:layout_marginTop="15sp"
+                        android:layout_marginEnd="15sp"
+                        android:layout_marginBottom="15sp"
+                        android:fontFamily="@font/poppins"
+                        android:padding="12sp"
+                        android:text="Sports"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
